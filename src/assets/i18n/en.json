@@ -1,0 +1,13 @@
+{
+  "admin":{"title":"Admin works fine"},
+  "nav":{
+  "page1":"page1",
+  "page2":"page2",
+  "page3":"page3",
+  "Login":"Login",
+  "Register":"Register",
+  "Admin":"Admin",
+  "User":"User"
+},
+  "user":{"title":"user works fine","joey":"how you doin?"}
+}

@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+<p>dash2 works!</p>
+<button mat-raised-button (click)="pop2()">pop2</button>
+<div
+    class="alert alert-success"
+    *ngIf="successMessage$ | async as successMessage"
+    >
+    {{ successMessage }}
+    <button    (click)="cancel()">x</button>
+  </div>
+  <div
+  class="alert alert-warning"
+  *ngIf="warningMessage$ | async as warningMessage"
+  >
+  {{ warningMessage }}
+  <button    (click)="cancel()">x</button>
+</div>
+<div class="alert alert-danger"  *ngIf="errorMessage$ | async as errorMessage">
+  {{ errorMessage }}
+  <button    (click)="save()">x</button>
+  </div>
+
+  <br />
+  <button type="button" class="btn btn-default" (click)="onError()">Create error</button><div >
+    <br />
+    <button type="button" class="btn btn-default" (click)="onSuccess()">Create success</button><div >
+  <br />
+<button type="button" class="btn btn-default" (click)="onWarning()">Create warning</button><div >

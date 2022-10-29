@@ -1,0 +1,66 @@
+<!-- <div class="nav">
+  Navbar
+  <button mat-flat-button [routerLink]="['../dashboard']">page1</button>
+  <button mat-raised-button [routerLink]="['../dashboard2']">page2</button>
+  <button mat-raised-button [routerLink]="['../dashboard3']">page3</button>
+
+  <button mat-raised-button [routerLink]="['../../public/login']">Login</button>
+<br>
+<button mat-raised-button [routerLink]="['../../public/register']"> Register</button>
+</div>
+<p>nav works!</p> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>SimpleNAV</h1>
+    <span class="menu-spacer"></span>
+    <div>
+
+      <!-- <a  [routerLink]="'../dashboard'" *ngIf="isAdmin" translate>  nav.page1</a>
+      <a  [routerLink]="'../dashboard2'" *ngIf="isAdmin" translate> nav.page2 </a>
+      <a  [routerLink]="'../dashboard3'" *ngIf="isAdmin" translate> nav.page3 </a>
+      <a  [routerLink]="'../../public/login'" translate> nav.Login </a>
+      <a  [routerLink]="'../../public/register'" translate> nav.Register </a>
+      <a  [routerLink]="'../../admin/admin'" *ngIf="isAdmin" translate> nav.Admin </a>
+      <a  [routerLink]="'../../user/user'" translate> nav.User </a> -->
+      <a  mat-button [routerLink]="'../dashboard'" *ngIf="isAdmin" translate><h4 translate> nav.page1 </h4></a>
+      <a  mat-button [routerLink]="'../dashboard2'" *ngIf="isAdmin" translate><h4 translate> nav.page2 </h4></a>
+      <a  mat-button [routerLink]="'../dashboard3'" *ngIf="isAdmin" translate><h4 translate> nav.page3 </h4></a>
+      <a  mat-button [routerLink]="'../../public/login'" translate> <h4 translate>nav.Login </h4></a>
+      <a  mat-button [routerLink]="'../../public/register'" translate><h4 translate> nav.Register </h4></a>
+      <a  mat-button [routerLink]="'../../admin/admin'" *ngIf="isAdmin" translate> <h4 translate>nav.Admin </h4></a>
+      <a  mat-button [routerLink]="'../../user/user'" translate><h4 translate> nav.User </h4></a>
+      <button (click)="changeLanguage('en')">English</button>
+      <button (click)="changeLanguage('ar')">Arabic</button>
+
+    </div>
+  </mat-toolbar-row>
+
+  <!-- <mat-toolbar-row>
+      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row> -->
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item [routerLink]="'../dashboard'"> page1 </a>
+      <a mat-list-item [routerLink]="'../dashboard2'"> page2 </a>
+      <a mat-list-item [routerLink]="'../dashboard3'"> page3 </a>
+      <a mat-list-item [routerLink]="'../../public/login'"> Login </a>
+      <a mat-list-item [routerLink]="'../../public/register'"> Register </a>
+      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- <div style="height: 50vh;">
+
+      <router-outlet></router-outlet>
+    </div> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

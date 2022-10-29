@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+<p translate>user.title</p>
+<div>
+  <h3>Alert Dialog</h3>
+<!-- </div>
+<button class="e-btn" (click)="this.showBtn($event)">Show Alert Dialog</button>
+<button class="e-btn" (click)="this.hideBtn($event)">Close Dialog</button>
+<div id="dialogContainer">
+ <div id="alertDialog" #dialogAlert></div>
+ </div>
+ <button type="button" class="btn btn-default" (click)="onCreateModal()">Create modal</button><div class="container"> -->
+   <div
+    class="alert alert-success"
+    *ngIf="successMessage$ | async as successMessage"
+    >
+    {{ successMessage }}
+    <button    (click)="cancel()">x</button>
+  </div>
+  <div
+  class="alert alert-warning"
+  *ngIf="warningMessage$ | async as warningMessage"
+  >
+  {{ warningMessage }}
+  <button    (click)="cancel()">x</button>
+</div>
+<div class="alert alert-danger"  *ngIf="errorMessage$ | async as errorMessage">
+  {{ errorMessage }}
+  <button    (click)="save()">x</button>
+  </div>
+
+<h3>Please click on the below button open popup</h3>
+<hr />
+<button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  class="btn btn-primary"
+  (click)="openPopup()">Show Data
+</button>
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">GeeksForGeeks</h4>
+      </div>
+      <div class="modal-body">
+        <p>One Stop Solution for all CS problems</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-default" (click)="onError()">Create error</button><div >
+<button type="button" class="btn btn-default" (click)="onSuccess()">Create success</button><div >
+<button type="button" class="btn btn-default" (click)="onWarning()">Create warning</button><div >
